@@ -39,7 +39,7 @@ CREATE TABLE kpi.employee
   id                      INTEGER PRIMARY KEY DEFAULT nextval('kpi.global_seq'),
   id_parent               INTEGER                      NOT NULL,
   id_division             INTEGER                              ,
-  name                    VARCHAR                              ,
+  firstname               VARCHAR                              ,
   lastname                VARCHAR                               ,
   patronym                VARCHAR                               ,
   position                VARCHAR                               ,
