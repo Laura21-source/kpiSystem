@@ -14,6 +14,7 @@ public class KpiSystem extends SpringBootServletInitializer {
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(KpiSystem.class);
     }
+
     public static void main(String[] args) {
         SpringApplication.run(KpiSystem.class, args);
     }
