@@ -7,6 +7,7 @@ DROP TABLE IF EXISTS kpi.divisions_employees CASCADE;
 
 CREATE SEQUENCE kpi.global_seq START 100000;
 
+
 CREATE TABLE kpi.legal_documents
 (
   id                      INTEGER PRIMARY KEY DEFAULT nextval('kpi.global_seq'),
@@ -22,17 +23,16 @@ CREATE TABLE kpi.division
   id_parent               INTEGER                      NOT NULL,
   name                    VARCHAR                              ,
   FOREIGN KEY (employee_id) REFERENCES kpi.employee (id) ON DELETE CASCADE,
-  FOREIGN KEY () REFERENCES kpi.users (id) ON DELETE CASCADE
+  FOREIGN KEY (division_id) REFERENCES kpi.division (id) ON DELETE CASCADE
 );
 
 CREATE TABLE kpi.divisions_employees
 (
   id_division              INTEGER                     NOT NULL,
-  id_employee              INTEGER                     NOT NULL
+  id_employee              INTEGER                     NOT NULL,
+  FOREIGN KEY (division_id) REFERENCES kpi.division (id) ON DELETE CASCADE,
+  FOREIGN KEY (distribution_departments_id) REFERENCES esrd.department (id) ON DELETE CASCADE
 );
-
-
-
 
 CREATE TABLE kpi.employee
 (
